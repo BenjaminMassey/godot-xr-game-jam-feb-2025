@@ -1,8 +1,37 @@
-[gd_scene load_steps=2 format=3 uid="uid://djsgq5kq7mn5a"]
+[gd_scene load_steps=4 format=3 uid="uid://djsgq5kq7mn5a"]
 
 [ext_resource type="PackedScene" uid="uid://spicud5jhdm6" path="res://models/table.glb" id="1_6d8tr"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_h83g6"]
+height = 0.313
+radius = 0.026
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_v7gqb"]
+size = Vector3(0.391, 0.041, 0.4)
 
 [node name="item_table" type="Node3D"]
 
 [node name="table_model" parent="." instance=ExtResource("1_6d8tr")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="leg_collider" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.165096, 0.166064, -0.155077)
+shape = SubResource("CylinderShape3D_h83g6")
+
+[node name="leg_collider2" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.142887, 0.166064, 0.162974)
+shape = SubResource("CylinderShape3D_h83g6")
+
+[node name="leg_collider3" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139414, 0.150661, 0.162974)
+shape = SubResource("CylinderShape3D_h83g6")
+
+[node name="leg_collider4" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.139414, 0.150661, -0.148339)
+shape = SubResource("CylinderShape3D_h83g6")
+
+[node name="top_collider" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.006, 0.298, 0)
+shape = SubResource("BoxShape3D_v7gqb")

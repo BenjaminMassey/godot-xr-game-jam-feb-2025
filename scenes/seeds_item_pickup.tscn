@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://bk50a4f25ikf4"]
+
+[ext_resource type="PackedScene" uid="uid://c8l60rnugru40" path="res://addons/godot-xr-tools/objects/pickable.tscn" id="1_nly82"]
+[ext_resource type="PackedScene" uid="uid://bgg1xwcqcs3so" path="res://models/seeds.glb" id="2_8l3il"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_71me7"]
+size = Vector3(0.1, 0.025, 0.1)
+
+[node name="seeds_item" instance=ExtResource("1_nly82")]
+
+[node name="CollisionShape3D" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0118786, 0)
+shape = SubResource("BoxShape3D_71me7")
+
+[node name="seeds" parent="." index="1" instance=ExtResource("2_8l3il")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)
