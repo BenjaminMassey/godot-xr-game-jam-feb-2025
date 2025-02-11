@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://da66t1t62cm1c"]
+
+[ext_resource type="PackedScene" uid="uid://bvimfe67wclgv" path="res://models/corn.glb" id="1_6nn7i"]
+
+[node name="corn_stalk" type="Node3D"]
+
+[node name="corn_model" parent="." instance=ExtResource("1_6nn7i")]
+transform = Transform3D(0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, -0.00543682, -0.0196268, 0.0453558)

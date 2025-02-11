@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://k44jxutlxgac"]
+
+[ext_resource type="PackedScene" uid="uid://b84xn4uo5uauy" path="res://models/plot.glb" id="1_5oimf"]
+
+[node name="land_plot" type="Node3D"]
+
+[node name="plot_model" parent="." instance=ExtResource("1_5oimf")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0.00917345, 0.0181488, 0.0353416)

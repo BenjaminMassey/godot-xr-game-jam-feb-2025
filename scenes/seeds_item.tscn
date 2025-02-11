@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cd53hfwod4p8i"]
+
+[ext_resource type="PackedScene" uid="uid://bgg1xwcqcs3so" path="res://models/seeds.glb" id="1_8p2ka"]
+
+[node name="seeds_item" type="Node3D"]
+
+[node name="seeds_model" parent="." instance=ExtResource("1_8p2ka")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 0, 0, 0)

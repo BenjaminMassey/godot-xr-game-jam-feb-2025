@@ -1,9 +1,28 @@
-[gd_scene load_steps=2 format=3 uid="uid://bmadgmy8hno64"]
+[gd_scene load_steps=8 format=3 uid="uid://bmadgmy8hno64"]
 
 [ext_resource type="Script" path="res://addons/godot-xr-tools/xr/start_xr.gd" id="1_jnl04"]
+[ext_resource type="PackedScene" uid="uid://k44jxutlxgac" path="res://scenes/land_plot.tscn" id="3_1a52r"]
+[ext_resource type="PackedScene" uid="uid://djsgq5kq7mn5a" path="res://scenes/item_table.tscn" id="4_2jmu7"]
+[ext_resource type="PackedScene" uid="uid://bvy2y6igomsws" path="res://scenes/cauldron_creator.tscn" id="5_31mn8"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_jat41"]
+
+[sub_resource type="Sky" id="Sky_lc54j"]
+sky_material = SubResource("ProceduralSkyMaterial_jat41")
+
+[sub_resource type="Environment" id="Environment_4oq11"]
+background_mode = 2
+sky = SubResource("Sky_lc54j")
 
 [node name="Main" type="Node3D"]
 script = ExtResource("1_jnl04")
+
+[node name="sunlight" type="DirectionalLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.79505, 0.606544, 0, -0.606544, 0.79505, 0, 3.55444, 3.45096)
+light_color = Color(1, 1, 0.65098, 1)
+
+[node name="environment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_4oq11")
 
 [node name="xr_origin" type="XROrigin3D" parent="."]
 
@@ -20,3 +39,18 @@ tracker = &"right_hand"
 
 [node name="right_sphere" type="CSGSphere3D" parent="xr_origin/right_controller"]
 radius = 0.1
+
+[node name="land_plot" parent="." instance=ExtResource("3_1a52r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.534244, 0, -1.54495)
+
+[node name="land_plot2" parent="." instance=ExtResource("3_1a52r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.54495)
+
+[node name="land_plot3" parent="." instance=ExtResource("3_1a52r")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.537769, 0, -1.54495)
+
+[node name="item_table" parent="." instance=ExtResource("4_2jmu7")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.858012, 0, 0)
+
+[node name="cauldron_creator" parent="." instance=ExtResource("5_31mn8")]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.851198, 0, 0)

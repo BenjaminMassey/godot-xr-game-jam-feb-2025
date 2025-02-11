@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://bvy2y6igomsws"]
+
+[ext_resource type="PackedScene" uid="uid://dm7msy8caina0" path="res://models/cauldron.glb" id="1_xtxgm"]
+
+[node name="cauldron_creator" type="Node3D"]
+
+[node name="cauldron_model" parent="." instance=ExtResource("1_xtxgm")]
+transform = Transform3D(0.189442, 0.0641226, 0, -0.0641226, 0.189442, 0, 0, 0, 0.2, -0.0830308, 0.489141, -0.104796)
